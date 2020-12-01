@@ -14,16 +14,16 @@ function Home() {
         <div className="home__row">
           <Product
             id="123456"
-            title="Lean start up"
+            title="The Lean Startup: How Constant Innovation Creates Radically Successful Businesses"
             price={29.99}
             image="https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg"
             rating={5}
           />
           <Product
             id="4567890"
-            title="Kenwood kMix Stand Mixer for..."
+            title="Kenwood KMix Stand Mixer for Baking, Stylish Kitchen Mixer with K-beater, Dough Hook and Whisk, 5 Litre Glass Bowl, Removable Splash Guard, 1000 W, Red"
             price={239.99}
-            image="https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg"
+            image="https://images-na.ssl-images-amazon.com/images/I/61FJtVQh9bL._AC_SX425_.jpg"
             rating={3}
           />
         </div>
@@ -37,14 +37,14 @@ function Home() {
           />
           <Product
             id="963852"
-            title="Amazon Echo..."
+            title="Echo Plus (2nd Gen) – Premium sound with a built-in smart home hub - Heather Grey Fabric"
             price={98.99}
             image="https://media.very.co.uk/i/very/P6LTG_SQ1_0000000071_CHARCOAL_SLf?$300x400_retinamobilex2$"
             rating={3}
           />
           <Product
             id="741963"
-            title="New Apple iPad Pro..."
+            title="New Apple iPad Pro (12.9-inch, Wi-Fi + Cellular, 1TB) - Silver (4th Generation)"
             price={598.99}
             image="https://images-na.ssl-images-amazon.com/images/I/816ctt5WV5L.AC_SX385_.jpg"
             rating={3}
@@ -53,7 +53,7 @@ function Home() {
         <div className="home__row">
           <Product
             id="654963"
-            title="Samsung LED Gaming Monitor 5120 x 1440"
+            title="Samsung LC49HG90DMUXEN 49 Curved Ultra Wide LED Monitor - 3840 x 1080, 144Hz, 1ms, Quantum Dot, Freesync, 2 x HDMI, Displayport, USB, Black"
             price={199.99}
             image="https://images-na.ssl-images-amazon.com/images/I/6125mFrzr6L.AC_SX355_.jpg"
             rating={3}
