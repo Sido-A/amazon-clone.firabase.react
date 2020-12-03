@@ -1,13 +1,19 @@
+import "./App.css";
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "./App.css";
+import { Elements } from "@stripe/stripe-js";
+import { loadStripe } from "@stripe/react-stripe-js";
+import { auth } from "./firebase";
+import { useStateValue } from "./StateProvider";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Checkout from "./components/Checkout";
 import Login from "./components/Login";
 import Payment from "./components/Payment";
-import { auth } from "./firebase";
-import { useStateValue } from "./StateProvider";
+
+const promise = loadStripe(
+  "pk_test_51HuM51GaoBQnq1OWhzwqDJnXtWwRmYhYyGEg9ACFEmJ1ntF9jFwnU3NaCEBR7O9BIxP8rzL0Oo8OTmmH06Fe1Fsf00YTK6jTVK"
+);
 
 function App() {
   const [{}, dispatch] = useStateValue();
