@@ -11,7 +11,7 @@ const stripe = require("stripe")(
 const app = express();
 
 //Middlewares
-app.use(cors({ orogin: true }));
+app.use(cors({ origin: true }));
 app.use(express.json());
 
 // API routes
@@ -21,11 +21,12 @@ app.get("/", (req, res) => {
 
 app.post("/payments/create", async (req, res) => {
   const total = req.query.total;
+
   console.log("Payment request received >>>>", total);
 
-  const paymentIntent = await stripe.paymentIntent.create({
+  const paymentIntent = await stripe.paymentIntents.create({
     amount: total,
-    currency: "usd",
+    currency: "GBP",
   });
 
   res.status(201).send({

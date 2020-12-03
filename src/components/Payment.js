@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
 import "../css/Payment.css";
 import { useStateValue } from "../StateProvider";
 import CheckoutProduct from "./CheckoutProduct";
+import { Link, useHistory } from "react-router-dom";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "../reducer";
@@ -11,14 +11,15 @@ import axios from "../axios";
 function Payment() {
   const [{ basket, user }, dispatch] = useStateValue();
   const history = useHistory();
+
+  const stripe = useStripe();
+  const elements = useElements();
+
   const [succeeded, setSucceeded] = useState(false);
   const [processing, setProcessing] = useState("");
   const [error, setError] = useState(null);
   const [disabled, setDisabled] = useState(true);
   const [clientSecret, setClientSecret] = useState(true);
-
-  const stripe = useStripe();
-  const elements = useElements();
 
   useEffect(() => {
     const getClientSecret = async () => {
@@ -32,6 +33,8 @@ function Payment() {
 
     getClientSecret();
   }, [basket]);
+
+  console.log("THE SECRET IS >>>>", clientSecret);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -48,7 +51,12 @@ function Payment() {
         setSucceeded(true);
         setError(null);
         setProcessing(false);
-        history.replaceState("/orders");
+
+        dispatch({
+          type: "EMPTY_BASKET",
+          
+        });
+        history.replace("/orders");
       });
   };
 

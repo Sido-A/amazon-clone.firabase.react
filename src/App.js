@@ -8,6 +8,7 @@ import Home from "./components/Home";
 import Checkout from "./components/Checkout";
 import Login from "./components/Login";
 import Payment from "./components/Payment";
+import Orders from "./components/Orders";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 
@@ -41,6 +42,10 @@ function App() {
     <Router>
       <div className="app">
         <Switch>
+          <Route path="/orders">
+            <Header />
+            <Orders />
+          </Route>
           <Route path="/login">
             <Login />
           </Route>
